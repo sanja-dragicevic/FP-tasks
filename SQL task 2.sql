@@ -1,6 +1,6 @@
 -- We can use the code from Task 1 to filter the orders table. 
 -- As the table view within this task is intended for other teams, we can transform some column names
--- to make them more clear and intuitive, and calculate additional relevant metrics. 
+-- to make them clearer and intuitive, and calculate additional relevant metrics. 
 -- The other teams can further use this view to visualize and interact with the data using visualization tools.
 
 
