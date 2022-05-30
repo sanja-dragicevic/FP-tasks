@@ -27,8 +27,9 @@ ORDER BY
 -- to show the last order versions:
 -- a) casting order_version_id to number type and finding the maximum/highest id number 
 --    in a table grouped by order_id (under the assumption that the ids are sequential numbers)
--- b) finding the maximum valid_to date in a table grouped by order_id (under the assumption that
---    the valid_to date is a specified date in the future, rather than the default 9999-1-1)
+-- b) finding the maximum valid_to date in a table grouped by order_id (which would be useful in case
+--    the valid_to date of the last order version is set to another specified date in the future, 
+--    rather than to a fixed default value of 9999-1-1)
 
 -- The following is an example of a: 
 
