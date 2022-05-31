@@ -5,7 +5,7 @@
 
 
 WITH
-  latest_orders AS (
+  last_versions AS (
   SELECT
     *
   FROM
@@ -14,7 +14,7 @@ WITH
     valid_to = "9999-01-01 23:59:00 UTC" )
 SELECT
   positions.order_id,
-  CAST(latest_orders.date AS date) AS date_of_order,
+  CAST(last_versions.date AS date) AS date_of_order,
   positions.wine_id,
   positions.wine_name,
   positions.price AS unit_price,
@@ -27,8 +27,8 @@ SELECT
 FROM
   `flaschenpost-351510.order_details.positions` positions
 LEFT JOIN
-  latest_orders
+  last_versions
 ON
-  positions.order_id = latest_orders.order_id
+  positions.order_id = last_versions.order_id
 ORDER BY
   positions.order_id
