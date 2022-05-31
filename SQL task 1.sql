@@ -43,23 +43,23 @@ WITH
   GROUP BY
     order_id )
 SELECT
-  all_orders.order_id,
-  all_orders.order_version_id,
-  all_orders.date,
-  all_orders.total,
-  all_orders.quantity,
-  all_orders.valid_from,
+  all_versions.order_id,
+  all_versions.order_version_id,
+  all_versions.date,
+  all_versions.total,
+  all_versions.quantity,
+  all_versions.valid_from,
   positions.*
 FROM
-  `flaschenpost-351510.order_details.orders` all_orders
+  `flaschenpost-351510.order_details.orders` all_versions
 JOIN
   last_versions
 ON
-  all_orders.order_id = last_versions.order_id
-  AND all_orders.order_version_id = last_versions.order_version_id
+  all_versions.order_id = last_versions.order_id
+  AND all_versions.order_version_id = last_versions.order_version_id
 RIGHT JOIN
   `flaschenpost-351510.order_details.positions` positions
 ON
-  all_orders.order_id = positions.order_id
+  all_versions.order_id = positions.order_id
 ORDER BY
-  all_orders.order_id
+  all_versions.order_id
