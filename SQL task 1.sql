@@ -1,7 +1,7 @@
--- By filtering the orders table by the valid_to field, we can show the last order versions.
+-- By filtering the orders table by the valid_to column, we can show the last order versions.
 -- The filtered orders table can be the result of task 1, 
 -- but we can also join it with the positions table 
--- to show the positions (order items) per the last order versions. 
+-- to show the positions (order items) per the last order version. 
 
 WITH
   last_versions AS (
